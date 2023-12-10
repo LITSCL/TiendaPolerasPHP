@@ -39,7 +39,7 @@
                 		}
                 	}
 
-                	if (isset($_GET["accion"]) && method_exists($controlador, $_GET["accion"])) { //Verificando que llega un método y si el m�todo existe en el controlador.
+                	if (isset($_GET["accion"]) && method_exists($controlador, $_GET["accion"])) { //Verificando que llega un método y si el método existe en el controlador.
                 		$accion = $_GET["accion"];
                 		
                 		$controlador->$accion(); //Aquí se llama el método que renderiza la vista.

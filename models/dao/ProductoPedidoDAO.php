@@ -3,7 +3,7 @@ if (file_exists("config/database.php")) {
 	require_once "config/database.php"; //Se usa para incluirse en el controlador frontal (Cuando se renderiza una vista).
 }
 else {
-	require_once "../config/database.php"; //Se usa para incluirse en el m�todo "controlador" de los controladores del modelo.
+	require_once "../config/database.php"; //Se usa para incluirse en el método "controlador" de los controladores del modelo.
 }
 ?>
 

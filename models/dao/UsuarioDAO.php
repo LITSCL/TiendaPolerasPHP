@@ -3,7 +3,7 @@ if (file_exists("config/database.php")) {
 	require_once "config/database.php"; //Se usa para incluirse en el controlador frontal (Cuando se renderiza una vista).
 }		
 else {
-	require_once "../config/database.php"; //Se usa para incluirse en el m�todo "controlador" de los controladores del modelo.
+	require_once "../config/database.php"; //Se usa para incluirse en el método "controlador" de los controladores del modelo.
 }
 ?>
 
@@ -34,14 +34,14 @@ class UsuarioDAO {
     public function login($email, $clave) {
         $resultado = false;
         
-        $sql = "SELECT * FROM usuario WHERE email = '{$email}'"; //1. Se busca un usuario que tenga el email entregado por par�metro.
+        $sql = "SELECT * FROM usuario WHERE email = '{$email}'"; //1. Se busca un usuario que tenga el email entregado por parámetro.
         $login = $this->db->query($sql);
         
-        if ($login && $login->num_rows == 1) { //2. Se verifica si exist�a un usuario con dicho email.
+        if ($login && $login->num_rows == 1) { //2. Se verifica si existía un usuario con dicho email.
             $usuario = $login->fetch_object(); //3. La query se convierte en un objeto PHP (Usuario).
-            $verificacion = password_verify($clave, $usuario->clave); //4. Se verifica si la clave entregada por par�metro coincide con el hash.
+            $verificacion = password_verify($clave, $usuario->clave); //4. Se verifica si la clave entregada por parámetro coincide con el hash.
             
-            if ($verificacion) { //5. Si la clave coincid�a con el hash, se retorna el objeto (Usuario).
+            if ($verificacion) { //5. Si la clave coincidía con el hash, se retorna el objeto (Usuario).
                 $resultado = $usuario;
             }
         }
